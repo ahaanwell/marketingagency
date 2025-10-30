@@ -343,11 +343,11 @@
 }
 
 /* Custom Media Queries */
-@media (max-width: 640px) {
+/* @media (max-width: 640px) {
   .container {
     @apply px-4;
   }
-}
+} */
 
 /* Print Styles */
 @media print {

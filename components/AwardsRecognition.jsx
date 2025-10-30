@@ -40,7 +40,7 @@ export default function AwardsRecognition() {
               key={index}
               className="flex flex-col items-center group"
             >
-              <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 w-full aspect-square flex items-center justify-center">
+              <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl px-4 md:p-6  transition-all duration-300 hover:shadow-xl hover:scale-105 w-full aspect-square flex items-center justify-center">
                 <img 
                   src={award.image} 
                   className="w-full h-full object-contain"

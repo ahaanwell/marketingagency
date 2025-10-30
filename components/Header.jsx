@@ -112,6 +112,7 @@ function Header() {
               <Link
                 key={item.link}
                   href={item.link}
+                  onClick={() => setMobileMenuOpen(false)}
                 className="block w-full text-left py-4 text-white/80 hover:text-white text-lg font-light tracking-wide transition-colors border-b border-white/5 last:border-0"
                 style={{ 
                   animation: mobileMenuOpen ? `slideIn 0.3s ease-out ${index * 0.05}s forwards` : 'none',
