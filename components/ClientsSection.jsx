@@ -4,15 +4,15 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ClienteleList() {
   const clients = [
-    { name: 'Adarsh', logo: '/adarsh.webp' },
-    { name: 'mahindra', logo: '/mahindra.png' },
-    { name: 'sobha', logo: '/sobha.webp' },
-    { name: 'myniwa', logo: '/myniwa.png' },
-    { name: 'dailyhunt', logo: '/dailyhunt.webp' },
+    { name: 'dunkin', logo: '/dunkin.webp' },
+    { name: 'adani', logo: '/adani.webp' },
+    { name: 'sobha', logo: '/sobha.png' },
+    { name: 'canon', logo: '/canon.png' },
+    { name: 'ukvitest', logo: '/ukvitest.png' },
     { name: 'impact', logo: '/impact.webp' },
-    { name: 'aerologistics', logo: '/aerologistics.png' },
-    { name: 'omaxe', logo: '/omaxe.png' },
+    { name: 'bitto', logo: '/bitto.png' },
     { name: 'dalmia', logo: '/dalmia.png' },
+    { name: 'mahindra', logo: '/mahindra.png' },
   ];
 
   return (

@@ -51,7 +51,7 @@ function Hero() {
           <div className="w-full max-w-7xl">
             {/* Main Heading - Fully Responsive */}
             <div className="text-center sm:text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-2 leading-none tracking-tight animate-fade-in">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl font-bold text-white mb-2 leading-none tracking-tight animate-fade-in">
                 Welcome to
               </h1>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-none tracking-tight animate-fade-in animation-delay-500">

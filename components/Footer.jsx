@@ -24,7 +24,9 @@ function Footer() {
     { name: 'Services', link: '/#services' },
     { name: 'Portfolio', link: '/#portfolio' },
     { name: 'About', link: 'about-us' },
-    { name: 'Contact', link: 'contact-us' }
+    { name: 'Contact', link: 'contact-us' },
+    { name: 'Privacy Policy', link: 'privacy-policy' },
+    { name: 'Terms & Conditions', link: 'terms-and-conditions' }
   ];
 
   const services = [
@@ -58,10 +60,10 @@ function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <div className="font-light text-2xl tracking-widest">LIVEXCELLENCE</div>
+              <div className="font-medium text-2xl tracking-widest">LIVEXCELLENCE</div>
               <div className="text-xs text-white/50 tracking-wider">MARKETING AGENCY</div>
             </div>
-            <p className="text-white/60 mb-8 leading-relaxed font-light text-sm">
+            <p className="text-white/60 mb-8 leading-relaxed font-medium text-sm">
               Leading digital agency delivering innovative solutions for businesses worldwide.
             </p>
             
@@ -69,22 +71,22 @@ function Footer() {
             <div className="space-y-4">
               <div className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors cursor-pointer">
                 <Phone size={16} strokeWidth={1.5} />
-                <span className="text-sm font-light">+1 (555) 123-4567</span>
+                <span className="text-sm font-medium">+91 9319197564</span>
               </div>
               <div className="flex items-center space-x-3 text-white/60 hover:text-white transition-colors cursor-pointer">
                 <Mail size={16} strokeWidth={1.5} />
-                <span className="text-sm font-light">info@livexcellence.net</span>
+                <span className="text-sm font-medium">info@livexcellence.net</span>
               </div>
               <div className="flex items-start space-x-3 text-white/60 hover:text-white transition-colors cursor-pointer">
                 <MapPin size={16} strokeWidth={1.5} className="mt-0.5" />
-                <span className="text-sm font-light">123 Business St, New York, NY 10001</span>
+                <span className="text-sm font-medium">C-21 Sector 8, Gurugram, India</span>
               </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-light tracking-widest mb-6 text-white/50 uppercase">
+            <h3 className="text-sm font-medium tracking-widest mb-6 text-white/50 uppercase">
               Quick Links
             </h3>
             <div className="space-y-3">
@@ -92,7 +94,7 @@ function Footer() {
                 <Link
                   key={index}
                   href={item.link}
-                  className="block text-white/60 hover:text-white transition-colors font-light text-sm"
+                  className="block text-white/60 hover:text-white transition-colors font-medium text-sm"
                 >
                   {item.name}
                 </Link>
@@ -102,14 +104,14 @@ function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-light tracking-widest mb-6 text-white/50 uppercase">
+            <h3 className="text-sm font-medium tracking-widest mb-6 text-white/50 uppercase">
               Services
             </h3>
             <div className="space-y-3">
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="text-white/60 hover:text-white transition-colors cursor-pointer font-light text-sm"
+                  className="text-white/60 hover:text-white transition-colors cursor-pointer font-medium text-sm"
                 >
                   {service}
                 </div>
@@ -119,10 +121,10 @@ function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-sm font-light tracking-widest mb-6 text-white/50 uppercase">
+            <h3 className="text-sm font-medium tracking-widest mb-6 text-white/50 uppercase">
               Newsletter
             </h3>
-            <p className="text-white/60 text-sm mb-6 font-light">
+            <p className="text-white/60 text-sm mb-6 font-medium">
               Subscribe to get the latest updates and exclusive offers.
             </p>
             <div className="space-y-4">
@@ -135,7 +137,7 @@ function Footer() {
               />
               <button
                 onClick={handleNewsletterSubmit}
-                className="group w-full border border-white text-white px-6 py-3 font-light tracking-wide transition-all duration-300 hover:bg-white hover:text-black flex items-center justify-center space-x-2 text-sm uppercase"
+                className="group w-full border border-white text-white px-6 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-white hover:text-black flex items-center justify-center space-x-2 text-sm uppercase"
               >
                 <span>Subscribe</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -165,8 +167,8 @@ function Footer() {
 
             {/* Copyright */}
             <div className="text-center md:text-right">
-              <p className="text-white/50 text-xs font-light tracking-wide">
-                &copy; 2025 Livexcellence AGENCY. ALL RIGHTS RESERVED.
+              <p className="text-white/50 text-xs font-medium tracking-wide">
+                &copy; 2025 Livexcellence Marketing Agency. ALL RIGHTS RESERVED.
               </p>
             </div>
           </div>

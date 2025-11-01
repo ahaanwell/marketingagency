@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Users, Target, Heart, Sparkles, Zap, Shield, TrendingUp } from 'lucide-react';
 import ClientsSection from '@/components/ClientsSection';
+import MainLayout from '@/components/MainLayout';
 
 export default function AboutUsPage() {
   const stats = [
@@ -42,7 +43,8 @@ export default function AboutUsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <MainLayout>
+        <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-black text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -151,5 +153,6 @@ export default function AboutUsPage() {
         <ClientsSection/>
       </div>
     </div>
+    </MainLayout>
   );
 }

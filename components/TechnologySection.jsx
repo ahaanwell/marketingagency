@@ -2,40 +2,6 @@
 import { useState, useEffect } from 'react';
 
 function TechnologySection() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  const mobileAppTech = {
-    title: 'Mobile App Development',
-    native: [
-      { name: 'Swift', logo: '🍎' },
-      { name: 'Objective-C', logo: '⚙️' },
-      { name: 'Kotlin', logo: '🔷' }
-    ],
-    hybrid: [
-      { name: 'Flutter', logo: '💙' },
-      { name: 'ReactNative', logo: '⚛️' }
-    ]
-  };
-
-  const webAppTech = {
-    title: 'Web App Development',
-    frontend: [
-      { name: 'HTML', logo: '🔶' },
-      { name: 'CSS', logo: '🔷' },
-      { name: 'Bootstrap', logo: '🅱️' },
-      { name: 'React JS', logo: '⚛️' },
-      { name: 'Angular', logo: '🅰️' },
-      { name: 'Vue.js', logo: '🟢' }
-    ],
-    backend: [
-      { name: 'Laravel', logo: '🔴' },
-      { name: 'Node.js', logo: '🟢' },
-      { name: 'PHP', logo: '🐘' },
-      { name: 'Python', logo: '🐍' },
-      { name: 'TypeScript', logo: '🔷' },
-      { name: 'Java', logo: '☕' }
-    ]
-  };
 
   // Technologies for marquee sliders
   const marqueeTopTechnologies = [

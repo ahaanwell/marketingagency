@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+import MainLayout from '@/components/MainLayout';
 
 export default function ContactUsPage() {
   const [formData, setFormData] = useState({
@@ -38,7 +39,7 @@ export default function ContactUsPage() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+      details: ['+91 9319197564', '+1 (555) 987-6543'],
       link: 'tel:+15551234567'
     },
     {
@@ -50,7 +51,7 @@ export default function ContactUsPage() {
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Address',
-      details: ['123 Business Street', 'New York, NY 10001, USA'],
+      details: ['C-21 Sector 8, Gurugram, India'],
       link: null
     },
     {
@@ -81,7 +82,8 @@ export default function ContactUsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <MainLayout>
+        <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="bg-black text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
@@ -221,7 +223,7 @@ export default function ContactUsPage() {
             {/* Map Placeholder */}
             <div className="bg-gray-100 border border-gray-200 rounded-lg h-96 mb-8 flex items-center justify-center overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google1.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.69766374874431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -278,5 +280,6 @@ export default function ContactUsPage() {
         </div>
       </div>
     </div>
+    </MainLayout>
   );
 }

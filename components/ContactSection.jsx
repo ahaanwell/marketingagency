@@ -24,7 +24,7 @@ function ContactSection() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+91 9319197564",
     },
     {
       icon: Mail,
@@ -34,7 +34,7 @@ function ContactSection() {
     {
       icon: MapPin,
       label: "Address",
-      value: "123 Innovation Avenue, New York, NY 10001",
+      value: "C-21 Sector 8, Gurugram, India",
     },
     {
       icon: Clock,

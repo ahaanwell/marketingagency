@@ -139,6 +139,16 @@
     }
   }
 
+
+  .lp-primary-text{
+    color: #034bd9;
+  }
+
+    .lp-primary-bg{
+    background-color: #034bd9;
+  }
+
+
   /* Animation Classes */
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;

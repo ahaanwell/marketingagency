@@ -35,13 +35,14 @@ function Header() {
     <>
       <header className="sticky top-0 left-0 right-0 z-50 bg-white border-b border-white/10">
         <div className="container mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between h-14 p-1">
             {/* Logo */}
             <Link 
               href={"/"}
-              className="text-black font-bold text-xl tracking-widest cursor-pointer hover:text-gray-300 transition-colors"
+              className="text-black font-bold text-xl tracking-widest cursor-pointer"
             >
               LIVEXCELLENCE
+              <div className="text-[8px] text-black/50 tracking-wider">MARKETING AGENCY</div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -50,7 +51,7 @@ function Header() {
                 <Link
                   key={item.link}
                   href={item.link}
-                  className="text-black/80 hover:text-black cursor-pointer text-md font-light tracking-wide transition-colors relative group"
+                  className="text-black/80 hover:text-black cursor-pointer text-md font-medium tracking-wide transition-colors relative group"
                 >
                   {item.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-px bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -62,7 +63,7 @@ function Header() {
             <div className="flex items-center space-x-6">
               <Link 
                 href={"/contact-us"}
-                className="hidden md:block px-6 py-2 border cursor-pointer border-black/30 text-black text-sm font-light tracking-wide hover:bg-black hover:text-white transition-all duration-300"
+                className="hidden md:block px-6 py-2 border-2 rounded-3xl cursor-pointer border-black text-black text-sm font-medium tracking-wide hover:bg-black hover:text-white transition-all duration-300"
               >
                 Lets Talk
               </Link>
@@ -97,6 +98,7 @@ function Header() {
           <div className="flex items-center justify-between p-6 border-b border-white/10">
             <Link href={"/"} className="text-white font-light text-lg tracking-widest">
               LIVEXCELLENCE
+              <div className="text-[8px] text-black/50 tracking-wider">MARKETING AGENCY</div>
             </Link>
             <button
               onClick={() => setMobileMenuOpen(false)}
@@ -113,7 +115,7 @@ function Header() {
                 key={item.link}
                   href={item.link}
                   onClick={() => setMobileMenuOpen(false)}
-                className="block w-full text-left py-4 text-white/80 hover:text-white text-lg font-light tracking-wide transition-colors border-b border-white/5 last:border-0"
+                className="block w-full text-left py-4 text-white/80 hover:text-white text-lg font-medium tracking-wide transition-colors border-b border-white/5 last:border-0"
                 style={{ 
                   animation: mobileMenuOpen ? `slideIn 0.3s ease-out ${index * 0.05}s forwards` : 'none',
                   opacity: 0
@@ -128,7 +130,7 @@ function Header() {
           <div className="p-6 border-t border-white/10">
             <Link 
               href={"/contact-us"}
-              className="w-full px-6 py-3 border border-white/30 text-white text-sm font-light tracking-wide hover:bg-white hover:text-black transition-all duration-300"
+              className="w-full px-6 py-3 border border-white/30 text-white text-sm font-medium tracking-wide hover:bg-white hover:text-black transition-all duration-300"
             >
               Lets Talk
             </Link>

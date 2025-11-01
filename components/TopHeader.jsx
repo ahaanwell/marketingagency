@@ -29,7 +29,7 @@ function TopHeader() {
             {/* Address */}
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              <span>B-114 Sector 64, Noida, India</span>
+              <span>C-21 Sector 8, Gurugram, India</span>
             </div>
           </div>
 
