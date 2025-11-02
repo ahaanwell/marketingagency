@@ -16,7 +16,7 @@ export async function POST(request) {
     const port = 587;
     const user = "ahaanwell@gmail.com";
     const pass = "qwbnsavibnsvdwma";
-    const to = "tanjim11alam@gamil.com";
+    const to = "nowstartsolution@gmail.com";
 
     if (!host || !user || !pass) {
       return new Response(

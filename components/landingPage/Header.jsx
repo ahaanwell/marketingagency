@@ -28,30 +28,31 @@ export default function Header() {
   const handleMouseEnter = (dropdown) => setOpenDropdown(dropdown);
   const handleMouseLeave = () => setOpenDropdown(null);
 
-  const nLinks = "/services"
+  const nLinks = "/services";
+
+  const openChat = () => {
+    if (typeof window !== "undefined" && window.jivo_api) {
+      window.jivo_api.open();
+    }
+  };
+
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-white border-white/20 shadow-sm transition-all duration-300">
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/90 border-b border-white/20 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-end items-center h-16">
           {/* Logo Section */}
-          <div className="flex items-center space-x-3">
-            <a href={nLinks} className="lp-primary-text font-bold text-lg tracking-widest">
+          {/* <div className="flex items-center space-x-3">
+            <Link href={nLinks} className="lp-primary-text font-bold text-lg tracking-widest">
               LIVEXCELLENCE
-            </a>
-          </div>
+            </Link>
+          </div> */}
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
-            <a
-              href={nLinks}
-              className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all duration-200"
-            >
+            <a href={nLinks} className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all duration-200">
               Home
             </a>
-            <a
-              href={nLinks}
-              className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all duration-200"
-            >
+            <a href={nLinks} className="px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all duration-200">
               About
             </a>
 
@@ -61,7 +62,7 @@ export default function Header() {
               onMouseEnter={() => handleMouseEnter("services")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="flex cursor-pointer items-center gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
+              <button className="flex items-center gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
                 Services
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -87,7 +88,7 @@ export default function Header() {
               onMouseEnter={() => handleMouseEnter("products")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="flex items-center cursor-pointer gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
+              <button className="flex items-center gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
                 Products
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -113,7 +114,7 @@ export default function Header() {
               onMouseEnter={() => handleMouseEnter("pricing")}
               onMouseLeave={handleMouseLeave}
             >
-              <button className="flex cursor-pointer items-center gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
+              <button className="flex items-center gap-1 px-4 py-2 text-gray-800 hover:text-blue-600 font-medium transition-all">
                 Pricing
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -133,45 +134,44 @@ export default function Header() {
               )}
             </div>
 
-            {/* Contact Button */}
-            <a
-              href="#contact"
+            <button
+              onClick={openChat}
               className="ml-2 lp-primary-bg text-white font-semibold px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200"
             >
               Contact
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-gray-800"
+            className="lg:hidden text-gray-800 focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Dropdown Menu */}
       <div
-        className={`lg:hidden bg-white/90 backdrop-blur-md border-t border-gray-200 transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? "max-h-[600px]" : "max-h-0"
+        className={`lg:hidden bg-white/95 backdrop-blur-md border-t border-gray-200 transition-all duration-300 overflow-hidden ${
+          isMenuOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="px-4 py-4 space-y-2">
-          <a href="#home" className="block px-4 py-2 text-gray-800 font-medium hover:bg-blue-50 rounded-lg">
+        <div className="px-4 py-4 space-y-3">
+          <a href={nLinks} className="block px-4 py-2 text-gray-800 font-medium hover:bg-blue-50 rounded-lg">
             Home
           </a>
-          <a href="#about" className="block px-4 py-2 text-gray-800 font-medium hover:bg-blue-50 rounded-lg">
+          <a href={nLinks} className="block px-4 py-2 text-gray-800 font-medium hover:bg-blue-50 rounded-lg">
             About
           </a>
 
           {/* Services */}
-          <div className="px-4 py-2 text-gray-800 font-medium">Services</div>
+          <div className="px-4 py-2 text-gray-800 font-semibold">Services</div>
           {servicesMenu.map((item, i) => (
             <a
               key={i}
-              href={item.href}
+              href={nLinks}
               className="block pl-8 py-2 text-gray-600 hover:text-blue-600 text-sm"
             >
               {item.name}
@@ -179,11 +179,11 @@ export default function Header() {
           ))}
 
           {/* Products */}
-          <div className="px-4 py-2 text-gray-800 font-medium">Products</div>
+          <div className="px-4 py-2 text-gray-800 font-semibold">Products</div>
           {productsMenu.map((item, i) => (
             <a
               key={i}
-              href={item.href}
+              href={nLinks}
               className="block pl-8 py-2 text-gray-600 hover:text-blue-600 text-sm"
             >
               {item.name}
@@ -191,23 +191,23 @@ export default function Header() {
           ))}
 
           {/* Pricing */}
-          <div className="px-4 py-2 text-gray-800 font-medium">Pricing</div>
+          <div className="px-4 py-2 text-gray-800 font-semibold">Pricing</div>
           {pricingMenu.map((item, i) => (
             <a
               key={i}
-              href={item.href}
+              href={nLinks}
               className="block pl-8 py-2 text-gray-600 hover:text-blue-600 text-sm"
             >
               {item.name}
             </a>
           ))}
 
-          <a
-            href="#contact"
-            className="block mt-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white text-center font-semibold py-2 rounded-full shadow hover:shadow-lg"
+          <button
+            onClick={openChat}
+            className="block w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold py-2 rounded-full shadow hover:shadow-lg"
           >
             Contact
-          </a>
+          </button>
         </div>
       </div>
 

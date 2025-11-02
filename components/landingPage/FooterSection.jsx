@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { Phone, Mail, MapPin, Twitter, Facebook, Instagram, Linkedin, Award } from 'lucide-react';
 
@@ -20,6 +21,15 @@ export default function FooterSection() {
     { name: "FAQ", href: "#faq" }
   ];
 
+
+  const openChat = () => {
+    if (typeof window !== "undefined" && window.jivo_api) {
+      window.jivo_api.open();
+    }
+  };
+
+  const nLinks = "/services"
+
   return (
     <footer className="bg-gradient-to-br from-blue-800 via-blue-900 to-blue-950" id='contact'>
       {/* Call to Action Banner */}
@@ -34,7 +44,9 @@ export default function FooterSection() {
                 We believe our customers are our priority. If you have any question or need assistance please contact us.
               </p>
             </div>
-            <button className="px-8 py-3 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-800 transition-all duration-300 whitespace-nowrap">
+            <button 
+            onClick={openChat}
+            className="px-8 py-3 cursor-pointer bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-800 transition-all duration-300 whitespace-nowrap">
               GET IN TOUCH
             </button>
           </div>
@@ -90,7 +102,7 @@ export default function FooterSection() {
               {exploreLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    href={link.href}
+                    href={nLinks}
                     className="text-blue-200 hover:text-white text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 bg-blue-400 rounded-full group-hover:w-2 transition-all"></span>
@@ -108,7 +120,7 @@ export default function FooterSection() {
               {serviceLinks.map((link, index) => (
                 <li key={index}>
                   <a
-                    href={link.href}
+                    href={nLinks}
                     className="text-blue-200 hover:text-white text-sm transition-colors flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 bg-blue-400 rounded-full group-hover:w-2 transition-all"></span>

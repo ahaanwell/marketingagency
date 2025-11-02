@@ -5,6 +5,11 @@ import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 export default function FAQSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const openChat = () => {
+    if (typeof window !== "undefined" && window.jivo_api) {
+      window.jivo_api.open();
+    }
+  };
   const faqs = [
     {
       question: "Who are Livexcellence.?",
@@ -107,7 +112,9 @@ export default function FAQSection() {
           <p className="text-gray-600 mb-6">
             Our support team is here to help you 24/7
           </p>
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+          <button 
+          onClick={openChat}
+          className="px-8 cursor-pointer py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
             Contact Support
           </button>
         </div>

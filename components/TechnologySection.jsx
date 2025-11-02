@@ -15,15 +15,15 @@ function TechnologySection() {
   ];
 
   return (
-    <section className="">
-      <div className="container z-10">
+    <section className="w-full">
+      <div className=" z-10 w-full">
         {/* Auto-Sliding Marquee - Top Row (Left to Right) */}
-        <div className="overflow-hidden bg-gradient-to-r from-orange-400 to-pink-400 py-6">
+        <div className="overflow-hidden bg-gradient-to-r from-orange-400 to-pink-400 py-6 w-full">
           <div className="flex animate-marquee-left whitespace-nowrap">
             {marqueeTopTechnologies.map((tech, index) => (
               <div
                 key={index}
-                className="inline-flex items-center justify-center px-12 text-white font-bold text-2xl tracking-wider"
+                className="inline-flex items-center justify-center px-12 text-white font-bold text-2xl tracking-wider w-full"
               >
                 {tech}
               </div>

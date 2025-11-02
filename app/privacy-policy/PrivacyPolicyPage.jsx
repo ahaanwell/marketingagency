@@ -9,9 +9,9 @@ export default function PrivacyPolicyPage() {
       icon: <FileText className="w-6 h-6" />,
       title: "Introduction",
       content: [
-        "We at Appnexus Technology Private Limited (\"Appnexus\") are committed to protecting your privacy. This Privacy Policy applies to both our website (www.appnexustech.com) and mobile applications owned and controlled by Appnexus. This policy governs our data collection, processing, and usage practices. It also describes your choices regarding the use, access, and correction of your personal information. If you do not agree with the data practices described in this Privacy Policy, you should not use the website or our mobile applications.",
+        "We at Livexcellence are committed to protecting your privacy. This Privacy Policy applies to both our website (www.livexcellence.net) and mobile applications owned and controlled by Livexcellence. This policy governs our data collection, processing, and usage practices. It also describes your choices regarding the use, access, and correction of your personal information. If you do not agree with the data practices described in this Privacy Policy, you should not use the website or our mobile applications.",
         "This Privacy Policy was last modified on May 24, 2018. We periodically update this Privacy Policy. We will post any privacy policy changes on this page and, if the changes are significant, we will provide a more prominent notice by sending you an email notification. While we will notify you of any material changes to this Privacy Policy, we encourage you to review this Privacy Policy periodically.",
-        "If you have any questions about this privacy policy or the treatment of the information you provide us, please write to us by email at privacy@appnexustech.com or by mail to Appnexus Technology Pvt. Ltd, India."
+        "If you have any questions about this privacy policy or the treatment of the information you provide us, please write to us by email at privacy@livexcellence.net or by mail to Livexcellence, India."
       ]
     },
     {
@@ -33,7 +33,7 @@ export default function PrivacyPolicyPage() {
         },
         {
           subtitle: "Log Files",
-          content: "When you use our services or view content provided by us, we automatically collect information about your computer hardware and software. This information can include your IP address, browser type, domain names, Internet service provider (ISP), the files viewed on our site, operating system, clickstream data, access times, and referring website addresses. This information is used by Appnexus for the operation of the service, to maintain the quality of the service, and to provide general statistics regarding the use of the Appnexus website."
+          content: "When you use our services or view content provided by us, we automatically collect information about your computer hardware and software. This information can include your IP address, browser type, domain names, Internet service provider (ISP), the files viewed on our site, operating system, clickstream data, access times, and referring website addresses. This information is used by Livexcellence for the operation of the service, to maintain the quality of the service, and to provide general statistics regarding the use of the Livexcellence website."
         },
         {
           subtitle: "Information We Collect from Third Parties",
@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
       title: "How We Share Information We Collect",
       subsections: [
         {
-          subtitle: "Appnexus Partners",
+          subtitle: "Livexcellence Partners",
           content: "We may share data with trusted partners to contact you based on your request to receive such communications, help us perform statistical analysis, or provide customer support. Such third parties are prohibited from using your personal information except for these purposes, and they are required to maintain the confidentiality of your information."
         },
         {
@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
       subsections: [
         {
           subtitle: "Cookies",
-          content: "Appnexus uses cookies or similar technologies (such as web beacons) to analyze trends, administer the website, track users' movements around the website, and gather demographic information about our user base as a whole."
+          content: "Livexcellence uses cookies or similar technologies (such as web beacons) to analyze trends, administer the website, track users' movements around the website, and gather demographic information about our user base as a whole."
         },
         {
           subtitle: "Advertising",
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
         },
         {
           subtitle: "To Unsubscribe from Our Communications",
-          content: "You may unsubscribe from our marketing communications by clicking on the \"unsubscribe\" link located on the bottom of our emails, updating your communication preferences, or by sending us an email at info@appnexustech.com."
+          content: "You may unsubscribe from our marketing communications by clicking on the \"unsubscribe\" link located on the bottom of our emails, updating your communication preferences, or by sending us an email at info@livexcellence.net."
         }
       ]
     }
@@ -233,12 +233,12 @@ export default function PrivacyPolicyPage() {
               <div className="space-y-2">
                 <p className="text-gray-300">
                   <strong>Email:</strong>{' '}
-                  <a href="mailto:privacy@appnexustech.com" className="text-white hover:underline">
-                    privacy@appnexustech.com
+                  <a href="mailto:privacy@livexcellence.net" className="text-white hover:underline">
+                    privacy@livexcellence.net
                   </a>
                 </p>
                 <p className="text-gray-300">
-                  <strong>Address:</strong> Appnexus Technology Pvt. Ltd, India
+                  <strong>Address:</strong> Livexcellence, India
                 </p>
               </div>
             </div>
