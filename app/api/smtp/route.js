@@ -29,7 +29,7 @@ export async function POST(request) {
     const transporter = nodemailer.createTransport({
       host, // must be a valid hostname (no https://)
       port,
-      secure: 46,
+      secure: false,
       auth: { user, pass },
     });
 

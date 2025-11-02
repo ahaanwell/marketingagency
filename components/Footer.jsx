@@ -54,9 +54,9 @@ function Footer() {
         <div className="absolute inset-0 bg-grid-footer"></div>
       </div>
 
-      <div className="container mx-auto px-6 lg:px-8 relative z-10">
+      <div className=" mx-auto px-6 lg:px-8 relative z-10">
         {/* Main Footer Content */}
-        <div className="py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10">
+        <div className="py-10 grid md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-white/10">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-6">
@@ -145,6 +145,10 @@ function Footer() {
             </div>
           </div>
         </div>
+
+        <p className='text-xs text-gray-400'>
+          Disclaimer: Livexcellence is an independent online retailer specializing in desktops, laptops, tablets, peripherals, and software products. All brand names, images, and logos featured on this website are used solely for illustrative purposes. We maintain official partnerships only with the brands listed in our “Partners” section. For authentic and up-to-date information regarding Trend Micro Support, customer service, or contact details, please visit the official Trend Micro website at www.trendmicro.com
+        </p>
 
         {/* Bottom Bar */}
         <div className="py-8">
