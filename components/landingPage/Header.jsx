@@ -8,7 +8,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState(null);
 
   const servicesMenu = [
-    { name: "Technical Support", href: "#technical-support" },
+    { name: "Technical Setup", href: "#technical-support" },
     { name: "Website Design & Development", href: "#website-design" },
     { name: "Mobile Application Development", href: "#mobile-app" },
     { name: "Digital Marketing", href: "#digital-marketing" },

