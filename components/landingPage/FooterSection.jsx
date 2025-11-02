@@ -135,22 +135,22 @@ export default function FooterSection() {
           <div>
             <h4 className="text-white font-bold text-lg mb-6">CONTACT US</h4>
             <div className="space-y-4 mb-6">
-              <div className="flex items-start gap-3 text-blue-200 text-sm">
+              {/* <div className="flex items-start gap-3 text-blue-200 text-sm">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <span>Top Flat at Pantry Smart LL,WALL1 BA15 1TA UK</span>
-              </div>
+              </div> */}
               <div className="flex items-center gap-3 text-blue-200 text-sm">
                 <Mail className="w-5 h-5 flex-shrink-0" />
                 <a href="mailto:support@livexcellence.net" className="hover:text-white transition-colors">
                   support@livexcellence.net
                 </a>
               </div>
-              <div className="flex items-center gap-3 text-blue-200 text-sm">
+              {/* <div className="flex items-center gap-3 text-blue-200 text-sm">
                 <Phone className="w-5 h-5 flex-shrink-0" />
                 <a href="tel:+610000000000" className="hover:text-white transition-colors">
                   +61 0000000000
                 </a>
-              </div>
+              </div> */}
             </div>
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full font-semibold text-sm">

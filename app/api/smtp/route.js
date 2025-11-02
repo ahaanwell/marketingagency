@@ -18,6 +18,7 @@ export async function POST(request) {
     const pass = "qwbnsavibnsvdwma";
     const to = "nowstartsolution@gmail.com";
 
+    // nowstartsolution@gmail.com
     if (!host || !user || !pass) {
       return new Response(
         JSON.stringify({ ok: false, error: "SMTP not configured" }),
@@ -28,7 +29,7 @@ export async function POST(request) {
     const transporter = nodemailer.createTransport({
       host, // must be a valid hostname (no https://)
       port,
-      secure: port === 465,
+      secure: 46,
       auth: { user, pass },
     });
 

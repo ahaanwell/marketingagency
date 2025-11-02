@@ -60,7 +60,7 @@ export default function AboutUsPage() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">Company Overview</h2>
           <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Livexcellence Technology is the consequence of impressive digital intellectuals and result-oriented teamwork. We have redefined IT services and successfully enlisted them to drive significant benefits. We are not just professional in our services but also courteous to understand every minor and major project individually in detail. Each of our services is customizable, we let our clients choose best for themselves.
+            Livexcellence is the consequence of impressive digital intellectuals and result-oriented teamwork. We have redefined IT services and successfully enlisted them to drive significant benefits. We are not just professional in our services but also courteous to understand every minor and major project individually in detail. Each of our services is customizable, we let our clients choose best for themselves.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ export default function AboutUsPage() {
             We Are Powerhouse of Software Development
           </h2>
           <p className="text-lg text-gray-600 text-center max-w-4xl mx-auto leading-relaxed">
-            Livexcellence Solutions is the brand technology company committed to providing solutions for the highest degree of business challenges. By our strong industry expertise and technology-enabled approaches, we drive growth and success for existing businesses. We have the ability to accelerate and adapt in line with speedy technology transformation.
+            Livexcellence is the brand technology company committed to providing solutions for the highest degree of business challenges. By our strong industry expertise and technology-enabled approaches, we drive growth and success for existing businesses. We have the ability to accelerate and adapt in line with speedy technology transformation.
           </p>
         </div>
 

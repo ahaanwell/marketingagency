@@ -37,15 +37,15 @@ export default function Header() {
   };
 
   return (
-    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/90 border-b border-white/20 shadow-sm transition-all duration-300">
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-md bg-white border-b border-white/20 shadow-sm transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-end items-center h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo Section */}
-          {/* <div className="flex items-center space-x-3">
-            <Link href={nLinks} className="lp-primary-text font-bold text-lg tracking-widest">
+          <div className="flex items-center space-x-3">
+            <button className="font-bold text-white text-lg tracking-widest">
               LIVEXCELLENCE
-            </Link>
-          </div> */}
+            </button>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
@@ -136,9 +136,9 @@ export default function Header() {
 
             <button
               onClick={openChat}
-              className="ml-2 lp-primary-bg text-white font-semibold px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200"
+              className="ml-2 lp-primary-bg cursor-pointer text-white font-semibold px-5 py-2 rounded-full shadow-md hover:shadow-lg hover:scale-105 transition-transform duration-200"
             >
-              Contact
+              Chat Now
             </button>
           </div>
 
@@ -206,7 +206,7 @@ export default function Header() {
             onClick={openChat}
             className="block w-full mt-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold py-2 rounded-full shadow hover:shadow-lg"
           >
-            Contact
+            Chat Now
           </button>
         </div>
       </div>
