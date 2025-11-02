@@ -38,9 +38,6 @@ export default function Hero() {
           case "NZ":
             code = "+64"; // New Zealand
             break;
-          case "IN":
-            code = "+91"; // India
-            break;
           default:
             code = "+1"; // Default to USA if unknown
         }
