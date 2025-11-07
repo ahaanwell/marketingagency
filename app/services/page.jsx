@@ -1,13 +1,22 @@
+import Script from "next/script";
 import ServicesPage from "./ServicesPage";
 
 export const metadata = {
-  title: "Set Up Your Printer in Just 3 Easy Steps",
+  title: "HP - Professional Printer Download Driver & Setup Solutions",
+  description:
+    "Expert printer services including installation, troubleshooting, maintenance, and 24/7 technical assistance for all printer brands.",
+  icons: {
+    icon: "/hplogo.png",
+  },
 };
 
-function page(){
-    return(
-        <ServicesPage/>
-    )
+export default function Page() {
+  return (
+    <>
+      
+
+      <ServicesPage />
+    </>
+  );
 }
 
-export default page
